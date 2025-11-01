@@ -82,42 +82,31 @@ Modelling was done progressively in four stages.
 - Logistic Regression with default hyperparameters was used as a simple/basic model.
   
 **Stage 3: Model Comparison - Logistic Regression, KNN, Decision Tree, SVM**  
-- Four models (including the simple model)  with default hyperparameters were trained on the dataset to assess how the models compare.
+- Four models (including the simple model) with default hyperparameters were trained on the dataset to assess which model performs best.
   1. Logistic Regression
   2. K Nearest Neighbors (KNN)
   3. Decision Tree
   4. Support Vector Machine (SVM)
 
-**Stage 4: Model Comparison - Grid Search**  
-- Four models (including the simple model)  with default hyperparameters were trained on the dataset to assess how the models compare.
-  1. Logistic Regression
-  2. K Nearest Neighbors (KNN)
-  3. Decision Tree
-  4. Support Vector Machine (SVM)
- 
-     
+**Stage 4: Model Improvement - Grid Search**  
+- The hyperparameters for each model were further varied in this stage to enhance the model accuracy.
+  1. Logistic Regression - 'C': 0.1, 1, 10
+  2. K Nearest Neighbors (KNN) - 'n_neighbors': 3, 5, 7
+  3. Decision Tree - 'max_depth': 5, 10, 15
+  4. Support Vector Machine (SVM) - 'C': 0.1, 1, 10
+- Grid Search with 5-fold cross validation was used.
+
 ## Evaluation
-**Features:**  
-Selected features from the raw data included 'year' (or 'age'), 'odometer', 'fuel', 'condition', 'transmission', 'drive', and 'cylinders'. Together with One-Hot Encoding of categorical features, there are a total of 23 features.
-  
-**Models:**  
-Three models were run on the cleaned dataset:
-1. Linear Regression with polynomial features (degree: 1 to 3)
-2. L2 regularisation using Ridge Regression with polynomial degree 1, alpha varied (0.001, 0.1, 1.0, 10.0, 100.0, 1000.0), and 5 fold cross validation.
-3. L1 regularisation using Lasso Regression with polynomial degree 1, alpha varied (0.001, 0.1, 1.0, 10.0, 100.0, 1000.0), and 5 fold cross validation.
 
 **Results:**  
-Linear Regression (1 degree polynomial):
-- Train RMSE: 9922.3432108642
-- Test RMSE: 9636.3801039762
+Baseline Model:
+- Test Accuracy: 0.8865015781
 
-Ridge Regression (1 degree polynomial, alpha = 10):
-- Train RMSE: 9922.3432149006
-- Test RMSE: 9636.3796371393
+Model Comparison (default):  
+<img width="487" height="110" alt="image" src="https://github.com/user-attachments/assets/1b35794a-5fe7-4a07-90ab-5b6e064cc08d" />
 
-Lasso Regression (1 degree polynomial, alpha = 0.1):
-- Train RMSE: 9922.3432197779
-- Test RMSE: 9636.3805397717
+Model Comparison (Grid Search):  
+
   
 With the lowest Test RMSE, Ridge Regession performed the best (marginally) while Lasso Regression has the highest Test RMSE and performed the worst (marginally). Therefore Ridge Regression is the selected model.
   
