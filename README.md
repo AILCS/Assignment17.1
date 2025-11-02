@@ -1,6 +1,6 @@
 # Comparing Classifiers on Business Problem: What drives the effectiveness of a bank's directed marketing campaign?
 
-**Assignment Notebook:** (https://github.com/AILCS/Assignment17.1/blob/main/prompt_III%20(final).ipynb)
+**Assignment Notebook:** https://github.com/AILCS/Assignment17.1/blob/main/prompt_III%20(final).ipynb
 
 ## Overview
 In this application, we explore a dataset from [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/222/bank+marketing). The classification goal is to predict if the client will subscribe a term deposit.
