@@ -111,42 +111,41 @@ Stage 3: Model Comparison (default):
 <img width="658" height="542" alt="image" src="https://github.com/user-attachments/assets/4bf01ae6-edfd-4e29-9f8f-91cea62b4d0c" />  
   
 **Accuracy:**  
-- All 4 models (with default hyperparameters) performed better than the baseline score.
-- SVM performed the best and Logistic Regression had comparable results. KNN ranked the third and Decision Tree performed the worst. 
-- Decision Tree was overfit with 100% training accuracy, and had only comparable accuracy with the baseline.
+- All four models outperformed the DummyClassifier baseline.
+- SVM achieved the highest accuracy, with Logistic Regression showing comparable results.
+- KNN ranked third, while the Decision Tree performed the weakest.
+- The Decision Tree model showed signs of overfitting, achieving 100% training accuracy but only baseline-level test accuracy.
   
 **Train Time:**  
-- SVM took the longest to train, while the other 3 models fared similarly.
+- SVM required the longest training time, consistent with its higher computational complexity.
+- The other three models (KNN, Logistic Regression, and Decision Tree) trained significantly faster and had similar training durations.
     
 Stage 4: Model Comparison (Grid Search):  
 <img width="501" height="120" alt="image" src="https://github.com/user-attachments/assets/b3dce51e-d5e5-4757-af70-5588a3c8e7e1" />  
 <img width="656" height="541" alt="image" src="https://github.com/user-attachments/assets/9ab7085d-cbb8-496d-b831-e56db61cb406" />  
 
 **Accuracy:** 
-- With GridSearch, Decision Tree and KNN models showed improvement in accuracy. In particular, Decision Tree no longer had 100% train accuracy while the test accuracy improved significantly, indicating a reduction in overfitting.
-- Logistic Regression and SVM had the same accuracy as with the default hyperparameters.
-- Decision Tree performed the best. SVM and Logistic Regression had comparable results, while KNN performed the worst.  
+- Both Decision Tree and KNN models showed improved test accuracy after applying GridSearch.
+- The Decision Tree no longer achieved 100% training accuracy, indicating a reduction in overfitting.
+- Logistic Regression and SVM achieved similar accuracy to their default hyperparameter results, suggesting minimal impact from tuning.
+- Decision Tree performed the best overall.
+- SVM and Logistic Regression had comparable performance, while KNN performed the weakest. 
 
 **Train Time:** 
-- The average (over hyperparameters searched) train time was longer than basing on the default hyperparameters.
-- As with the default hyperparameters, SVM took much longer than the other 3 models to train on the data. This is expected, given the large data size.
+- Average training time increased for all models due to the GridSearch process evaluating multiple parameter combinations, some of which took longer.
+- SVM remained the slowest to train, consistent with results from the default settings.
+- The longer training time for SVM is expected, given its computational complexity and the large dataset size.
 
 
 
 ## Deployment
-Dear Client,
+Dear Sir/Madam,
   
-I have identified a car price prediction model that estimates car prices using data you provided, specifically, 'price', 'year', 'odometer', 'fuel', 'condition', 'transmission', 'drive', and 'cylinders'.
+I have identified a prediction model that can estimate, with high accuracy based on the bank's dataset, whether a client will accept the bank's term deposit offer.
   
-Please note that the model is only good for estimating car prices ranging between 1k and 300k, cars from year 1990, and cars with less than 500k clocked on the odometer.
-  
-The prediction error based on your sample data is 9636, which is within a standard deviation (15000) of the car prices.
-  
-Additionally, below are the key findings:
-- Top 3 features contributing to higher prices: diesel cars, 4-wheel drives, cars with 8 cylinders
-- Top 3 features contributing to lower prices: older cars, cars used for longer distances, cars with 4 cylinders.
-  
-We can test the prediction model and continue to assess and refine it as we gather more data.
+The prediction accuracy based on the dataset is 91%, which is reasonably high. We can test the prediction model and continue to assess and refine it as we gather more data.
+
+A successful model will be a useful tool to achieve higher conversion and profitability rates, and enhance the bank's directed marketing campaign.
   
 Please let me know if you have questions.
   
