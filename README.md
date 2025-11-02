@@ -12,8 +12,8 @@ The purpose is to leverage data-driven insights to increase the effectiveness of
 The data is from a Portuguese banking institution and is a collection of the results of multiple marketing campaigns based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. 
 
 There are two datasets: 
-1) bank-additional-full.csv with all examples (41188) and 20 inputs, ordered by date (from May 2008 to November 2010), very close to the data analyzed in [Moro et al., 2014]
-2) bank-additional.csv with 10% of the examples (4119), randomly selected from 1), and 20 inputs.
+1) bank-additional-full.csv with all examples (41188) and 20 inputs, ordered by date (from May 2008 to November 2010), very close to the data analysed in [Moro et al., 2014]
+2) bank-additional.csv with 10% of the examples (4119), randomly selected from (1), and 20 inputs.
 The smallest datasets are provided to test more computationally demanding machine learning algorithms (e.g., SVM).
 
 The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y).
@@ -31,7 +31,7 @@ Related with the last contact of the current campaign:
 8. contact: contact communication type (categorical: 'cellular', 'telephone')  
 9. month: last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')  
 10. day_of_week: last contact day of the week (categorical: 'mon', 'tue', 'wed', 'thu', 'fri')  
-11. duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.  
+11. duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.    
 Other attributes:  
 12. campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)  
 13. pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)  
@@ -103,7 +103,7 @@ Modelling was done progressively in four stages.
 Stage 1: Baseline Model:
 - Test Accuracy: 0.886502  
   
-Stage 2: Baseline Model:
+Stage 2: Simple Model:
 - Test Accuracy: 0.911022  
   
 Stage 3: Model Comparison (default):  
@@ -127,7 +127,7 @@ Stage 4: Model Comparison (Grid Search):
 **Accuracy:** 
 - Both Decision Tree and KNN models showed improved test accuracy after applying GridSearch.
 - The Decision Tree no longer achieved 100% training accuracy, indicating a reduction in overfitting.
-- Logistic Regression and SVM achieved similar accuracy to their default hyperparameter results, suggesting minimal impact from tuning.
+- Logistic Regression and SVM achieved the same accuracy to their default hyperparameter results, suggesting no improvement from tuning.
 - Decision Tree performed the best overall.
 - SVM and Logistic Regression had comparable performance, while KNN performed the weakest. 
 
